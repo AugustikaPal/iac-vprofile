@@ -32,11 +32,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Terraform with specified version on the runner
-        uses: hashicorp/terraform-setup@v2
-        # Uncomment and provide a version if required
-        # with:
-        #   terraform_version: '1.6.3'
+      - name: Setup Terraform with specified version
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: '1.6.3' # Specify your required version or omit this line for latest
 
       - name: Terraform init
         id: init
